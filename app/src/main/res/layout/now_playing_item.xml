@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/backImage"
+        android:layout_width="350dp"
+        android:layout_height="280dp"
+        android:src="@drawable/test1"
+        android:scaleType="centerCrop"
+        android:layout_margin="16dp"
+        android:alpha="0.3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:shapeAppearanceOverlay="@style/ImageViewCorner"/>
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/nowPlayingIv"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:src="@drawable/test2"
+        android:layout_margin="16dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="@+id/backImage"
+        app:layout_constraintTop_toTopOf="@+id/backImage"
+        app:layout_constraintEnd_toEndOf="@+id/backImage"
+        app:shapeAppearanceOverlay="@style/ImageViewCorner"/>
+
+    <TextView
+        android:id="@+id/nowPlayingNameTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/test_movie_name"
+        android:fontFamily="@font/gilroy_extra_blod"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/nowPlayingIv"
+        app:layout_constraintTop_toBottomOf="@+id/nowPlayingIv"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="8dp"/>
+
+    <TextView
+        android:id="@+id/nowPlayingGenreTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/test_movie_genre"
+        android:fontFamily="@font/gilroy_light"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/nowPlayingIv"
+        app:layout_constraintTop_toBottomOf="@+id/nowPlayingNameTv"
+        android:layout_margin="8dp" />
+
+    <TextView
+        android:id="@+id/nowPlayingRateTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_rate"
+        android:drawablePadding="8dp"
+        android:text="@string/test_rating"
+        android:fontFamily="@font/gilroy_light"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="6dp"
+        app:layout_constraintStart_toStartOf="@+id/nowPlayingIv"
+        app:layout_constraintTop_toBottomOf="@+id/nowPlayingGenreTv" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

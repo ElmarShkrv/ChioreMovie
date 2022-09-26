@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">ChioreMovie</string>
+    <string name="see_all">SEE ALL</string>
+    <string name="header1">Now Playing</string>
+    <string name="test_movie_name">Spider-Man: No Way Home</string>
+    <string name="test_movie_genre">Action,Adventure,Science Fiction</string>
+    <string name="test_rating">4.4(1.14 k)</string>
+    <string name="header2">Popular</string>
+    <string name="test_date">2014</string>
+    <string name="header3">Upcoming</string>
+    <string name="header4">Top Rated</string>
+</resources>
