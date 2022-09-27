@@ -7,6 +7,12 @@
     <string name="test_rating">4.4(1.14 k)</string>
     <string name="header2">Popular</string>
     <string name="test_date">2014</string>
+    <string name="test_date_details">2019-04-24</string>
     <string name="header3">Upcoming</string>
     <string name="header4">Top Rated</string>
+    <string name="test_reviews">(19.46 k reviews)</string>
+    <string name="test_time">3:01</string>
+    <string name="test_overview">After the devastating events of Avengers: Sonsuzluk Savaşı (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos\' actions and restore balance to the universe.</string>
+    <string name="test_reviews_name">Radio1\'sMr.Movie!-MadAmi</string>
+    <string name="test_reviews_rating">10.0</string>
 </resources>

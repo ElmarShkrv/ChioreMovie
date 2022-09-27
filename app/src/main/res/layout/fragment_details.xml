@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/detailsIv"
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/testavang"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/linear1"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/detailsIv">
+
+                <TextView
+                    android:id="@+id/detailsNameTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_margin="16dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/gilroy_extra_blod"
+                    android:maxLines="1"
+                    android:text="@string/test_movie_name"
+                    android:textColor="@color/white"
+                    android:textSize="24sp" />
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="16dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_save" />
+
+            </LinearLayout>
+
+            <RatingBar
+                android:id="@+id/ratingBar"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:numStars="5"
+                android:progressTint="@color/yellow"
+                android:rating="5"
+                android:stepSize="1"
+                app:layout_constraintStart_toStartOf="@+id/linear1"
+                app:layout_constraintTop_toBottomOf="@+id/linear1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginStart="8dp"
+                android:text="@string/test_reviews"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@+id/ratingBar"
+                app:layout_constraintStart_toEndOf="@+id/ratingBar"
+                app:layout_constraintTop_toTopOf="@+id/ratingBar" />
+
+            <TextView
+                android:id="@+id/detailsGenreTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/test_movie_genre"
+                android:textColor="@color/grey"
+                android:fontFamily="@font/gilroy_light"
+                android:maxLines="1"
+                android:layout_marginTop="12dp"
+                app:layout_constraintStart_toStartOf="@+id/ratingBar"
+                app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
+
+            <TextView
+                android:id="@+id/detailsDateTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/test_date_details"
+                android:textColor="@color/grey"
+                android:fontFamily="@font/gilroy_light"
+                android:maxLines="1"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="@+id/detailsGenreTv"
+                app:layout_constraintTop_toBottomOf="@+id/detailsGenreTv" />
+
+            <ImageView
+                android:id="@+id/testTimeIv"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_time"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="@+id/detailsDateTv"
+                app:layout_constraintTop_toBottomOf="@+id/detailsDateTv" />
+
+            <TextView
+                android:id="@+id/detailsTimeTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/test_time"
+                android:textColor="@color/colorAccent"
+                android:fontFamily="@font/gilroy_light"
+                android:maxLines="1"
+                android:layout_marginStart="8dp"
+                app:layout_constraintStart_toEndOf="@+id/testTimeIv"
+                app:layout_constraintTop_toTopOf="@+id/testTimeIv"
+                app:layout_constraintBottom_toBottomOf="@+id/testTimeIv"/>
+
+            <TextView
+                android:id="@+id/detailsHeaderOverviewTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gilroy_extra_blod"
+                android:layout_marginTop="16dp"
+                android:text="Overview"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="@+id/testTimeIv"
+                app:layout_constraintTop_toBottomOf="@+id/testTimeIv"/>
+
+            <TextView
+                android:id="@+id/detailsOverviewTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gilroy_light"
+                android:text="@string/test_overview"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:padding="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/detailsHeaderOverviewTv"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:id="@+id/detailsHeaderTrailersTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gilroy_extra_blod"
+                android:layout_marginTop="16dp"
+                android:text="Trailers"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="@+id/detailsHeaderOverviewTv"
+                app:layout_constraintTop_toBottomOf="@+id/detailsOverviewTv"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/trailerRv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                tools:listitem="@layout/trailer_item"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/detailsHeaderTrailersTv" />
+
+            <TextView
+                android:id="@+id/detailsHeaderReviewsTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gilroy_extra_blod"
+                android:layout_marginTop="16dp"
+                android:text="Reviews"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="@+id/detailsHeaderTrailersTv"
+                app:layout_constraintTop_toBottomOf="@+id/trailerRv"/>
+
+            <TextView
+                android:id="@+id/detailsSeeAllReviews"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/gilroy_extra_blod"
+                android:padding="8dp"
+                android:text="@string/see_all"
+                android:textColor="@color/colorAccent"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@id/detailsHeaderReviewsTv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/detailsHeaderReviewsTv" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/reviewsIv"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@color/colorAccent"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/detailsHeaderReviewsTv"
+                app:layout_constraintStart_toStartOf="@+id/detailsHeaderReviewsTv"
+                app:shapeAppearanceOverlay="@style/circleImageView"/>
+
+            <TextView
+                android:id="@+id/detailsReviewsNameTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="8dp"
+                android:text="@string/test_reviews_name"
+                app:layout_constraintStart_toEndOf="@+id/reviewsIv"
+                app:layout_constraintTop_toTopOf="@+id/reviewsIv"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/detailsReviewsDateTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:layout_marginStart="8dp"
+                android:text="@string/test_date_details"
+                app:layout_constraintStart_toEndOf="@+id/reviewsIv"
+                app:layout_constraintTop_toBottomOf="@+id/detailsReviewsNameTv"
+                android:textColor="@color/grey" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="80dp"
+                android:layout_height="0dp"
+                app:cardCornerRadius="50dp"
+                android:backgroundTint="@color/ratingBackground"
+                app:layout_constraintTop_toTopOf="@+id/detailsReviewsNameTv"
+                app:layout_constraintBottom_toBottomOf="@+id/detailsReviewsDateTv"
+                app:layout_constraintEnd_toEndOf="@+id/detailsSeeAllReviews" >
+
+                <TextView
+                    android:id="@+id/nowPlayingRateTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:drawableStart="@drawable/ic_big_rate"
+                    android:drawablePadding="8dp"
+                    android:layout_gravity="center"
+                    android:text="@string/test_reviews_rating"
+                    android:fontFamily="@font/gilroy_extra_blod"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/detailsReviewTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gilroy_light"
+                android:text="@string/test_overview"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:padding="8dp"
+                android:layout_margin="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/detailsReviewsDateTv"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:id="@+id/detailsHeaderCastsTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gilroy_extra_blod"
+                android:layout_marginTop="16dp"
+                android:text="Casts"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="@+id/detailsHeaderReviewsTv"
+                app:layout_constraintTop_toBottomOf="@+id/detailsReviewTv"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/castsRv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                tools:listitem="@layout/casts_item"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/detailsHeaderCastsTv" />
+
+            <TextView
+                android:id="@+id/detailsHeaderSimilarTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gilroy_extra_blod"
+                android:layout_marginTop="16dp"
+                android:text="Similar"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="@+id/detailsHeaderCastsTv"
+                app:layout_constraintTop_toBottomOf="@+id/castsRv"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/similarRv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                tools:listitem="@layout/home_horizontal_item"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/detailsHeaderSimilarTv"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:id="@+id/detailsHeaderRecommendationTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gilroy_extra_blod"
+                android:layout_marginTop="16dp"
+                android:text="Recommendation"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="@+id/detailsHeaderCastsTv"
+                app:layout_constraintTop_toBottomOf="@+id/similarRv"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recommendationRv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                tools:listitem="@layout/home_horizontal_item"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/detailsHeaderRecommendationTv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="16dp"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
