@@ -69,8 +69,23 @@ class HomeFragment : Fragment() {
         observeTopRatedMovie()
         setupTopRatedRv()
 
-        binding.seeAllNowPlaying.setOnClickListener {
-            it.findNavController().navigate(R.id.action_homeFragment_to_nowPlayingFragment)
+        toSeeAllFragments()
+    }
+
+    private fun toSeeAllFragments() {
+        binding.apply {
+            seeAllNowPlaying.setOnClickListener { view ->
+                view.findNavController().navigate(R.id.action_homeFragment_to_nowPlayingFragment)
+            }
+            seeAllPopular.setOnClickListener { view ->
+                view.findNavController().navigate(R.id.action_homeFragment_to_popularFragment)
+            }
+            seeAllTopRated.setOnClickListener { view ->
+                view.findNavController().navigate(R.id.action_homeFragment_to_topRatedFragment)
+            }
+            seeAllUpcoming.setOnClickListener { view ->
+                view.findNavController().navigate(R.id.action_homeFragment_to_upcomingFragment)
+            }
         }
     }
 

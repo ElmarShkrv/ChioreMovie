@@ -51,7 +51,7 @@
     </fragment>
     <fragment
         android:id="@+id/nowPlayingFragment"
-        android:name="com.chiore.chioremovie.ui.fragments.seeallfragments.NowPlayingFragment"
+        android:name="com.chiore.chioremovie.ui.fragments.seeallfragments.nowplaying.NowPlayingFragment"
         android:label="NowPlayingFragment"
         tools:layout="@layout/fragment_now_playing">
         <action

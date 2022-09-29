@@ -24,6 +24,11 @@ class TopRatedFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.topRatedToolbar.setNavigationOnClickListener {
+            requireActivity().onBackPressed()
+        }
+
     }
 
     override fun onDestroyView() {

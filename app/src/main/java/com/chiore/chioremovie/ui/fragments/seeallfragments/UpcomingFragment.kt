@@ -24,6 +24,11 @@ class UpcomingFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.upcomingToolbar.setNavigationOnClickListener {
+            requireActivity().onBackPressed()
+        }
+
     }
 
     override fun onDestroyView() {

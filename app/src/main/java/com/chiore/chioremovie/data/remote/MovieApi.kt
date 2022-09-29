@@ -4,6 +4,7 @@ import com.chiore.chioremovie.data.model.movies.MovieResponse
 import com.chiore.chioremovie.util.Constants.Companion.API_KEY
 import retrofit2.Response
 import retrofit2.http.GET
+import retrofit2.http.Query
 
 interface MovieApi {
 
@@ -18,5 +19,10 @@ interface MovieApi {
 
     @GET("movie/top_rated?api_key=$API_KEY")
     suspend fun getTopRatedMovies(): Response<MovieResponse>
+
+    @GET("movie/now_playing?api_key=$API_KEY")
+    suspend fun getAllNowPlayingMovies(
+        @Query("page") position: Int
+    ): Response<MovieResponse>
 
 }
