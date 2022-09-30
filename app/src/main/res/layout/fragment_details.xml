@@ -72,12 +72,13 @@
                 android:layout_marginStart="16dp"
                 android:numStars="5"
                 android:progressTint="@color/yellow"
-                android:rating="5"
+                android:rating="1"
                 android:stepSize="1"
                 app:layout_constraintStart_toStartOf="@+id/linear1"
                 app:layout_constraintTop_toBottomOf="@+id/linear1" />
 
             <TextView
+                android:id="@+id/detailsRateTv"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_marginStart="8dp"
@@ -87,16 +88,17 @@
                 app:layout_constraintStart_toEndOf="@+id/ratingBar"
                 app:layout_constraintTop_toTopOf="@+id/ratingBar" />
 
-            <TextView
-                android:id="@+id/detailsGenreTv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/test_movie_genre"
-                android:textColor="@color/grey"
-                android:fontFamily="@font/gilroy_light"
-                android:maxLines="1"
-                android:layout_marginTop="12dp"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/detailsGemreRv"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="8dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:orientation="horizontal"
+                tools:listitem="@layout/genre_item"
+                tools:itemCount="4"
                 app:layout_constraintStart_toStartOf="@+id/ratingBar"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
 
             <TextView
@@ -108,24 +110,24 @@
                 android:fontFamily="@font/gilroy_light"
                 android:maxLines="1"
                 android:layout_marginTop="8dp"
-                app:layout_constraintStart_toStartOf="@+id/detailsGenreTv"
-                app:layout_constraintTop_toBottomOf="@+id/detailsGenreTv" />
+                app:layout_constraintStart_toStartOf="@+id/detailsGemreRv"
+                app:layout_constraintTop_toBottomOf="@+id/detailsGemreRv" />
 
             <ImageView
                 android:id="@+id/testTimeIv"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/ic_time"
+                android:src="@drawable/ic_budget"
                 android:layout_marginTop="8dp"
                 app:layout_constraintStart_toStartOf="@+id/detailsDateTv"
                 app:layout_constraintTop_toBottomOf="@+id/detailsDateTv" />
 
             <TextView
-                android:id="@+id/detailsTimeTv"
+                android:id="@+id/detailsBudgetTv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/test_time"
-                android:textColor="@color/colorAccent"
+                android:text="@string/test_budget"
+                android:textColor="@color/colorBdget"
                 android:fontFamily="@font/gilroy_light"
                 android:maxLines="1"
                 android:layout_marginStart="8dp"

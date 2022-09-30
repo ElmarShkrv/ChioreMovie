@@ -28,9 +28,12 @@
     </fragment>
     <fragment
         android:id="@+id/detailsFragment"
-        android:name="com.chiore.chioremovie.ui.fragments.DetailsFragment"
+        android:name="com.chiore.chioremovie.ui.fragments.details.DetailsFragment"
         android:label="DetailsFragment"
-        tools:layout="@layout/fragment_details"/>
+        tools:layout="@layout/fragment_details">
+        <argument android:name="detailId"
+            app:argType="integer" />
+    </fragment>
     <fragment
         android:id="@+id/searchFragment"
         android:name="com.chiore.chioremovie.ui.fragments.SearchFragment"

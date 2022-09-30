@@ -14,4 +14,6 @@
     <color name="ratingBackground">#293E58</color>
     <color name="background">@color/colorPrimary</color>
     <color name="cardBackground">@color/darkBlue</color>
+
+    <color name="colorBdget">#85BB65</color>
 </resources>

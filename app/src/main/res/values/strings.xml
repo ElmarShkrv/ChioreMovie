@@ -3,7 +3,7 @@
     <string name="see_all">SEE ALL</string>
     <string name="header1">Now Playing</string>
     <string name="test_movie_name">Spider-Man: No Way Home</string>
-    <string name="test_movie_genre">Action,Adventure,Science Fiction</string>
+    <string name="test_movie_genre">Action</string>
     <string name="test_rating">4.4(1.14 k)</string>
     <string name="header2">Popular</string>
     <string name="test_date">2014</string>
@@ -15,4 +15,5 @@
     <string name="test_overview">After the devastating events of Avengers: Sonsuzluk Savaşı (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos\' actions and restore balance to the universe.</string>
     <string name="test_reviews_name">Radio1\'sMr.Movie!-MadAmi</string>
     <string name="test_reviews_rating">10.0</string>
+    <string name="test_budget">Budget: 63000000</string>
 </resources>
