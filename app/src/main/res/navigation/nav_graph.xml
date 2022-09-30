@@ -60,7 +60,7 @@
     </fragment>
     <fragment
         android:id="@+id/popularFragment"
-        android:name="com.chiore.chioremovie.ui.fragments.seeallfragments.PopularFragment"
+        android:name="com.chiore.chioremovie.ui.fragments.seeallfragments.popular.PopularFragment"
         android:label="PopularFragment"
         tools:layout="@layout/fragment_popular">
         <action
@@ -69,7 +69,7 @@
     </fragment>
     <fragment
         android:id="@+id/topRatedFragment"
-        android:name="com.chiore.chioremovie.ui.fragments.seeallfragments.TopRatedFragment"
+        android:name="com.chiore.chioremovie.ui.fragments.seeallfragments.toprated.TopRatedFragment"
         android:label="TopRatedFragment"
         tools:layout="@layout/fragment_top_rated">
         <action
@@ -78,7 +78,7 @@
     </fragment>
     <fragment
         android:id="@+id/upcomingFragment"
-        android:name="com.chiore.chioremovie.ui.fragments.seeallfragments.UpcomingFragment"
+        android:name="com.chiore.chioremovie.ui.fragments.seeallfragments.upcoming.UpcomingFragment"
         android:label="UpcomingFragment"
         tools:layout="@layout/fragment_upcoming">
         <action

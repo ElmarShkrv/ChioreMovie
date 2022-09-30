@@ -20,9 +20,26 @@ interface MovieApi {
     @GET("movie/top_rated?api_key=$API_KEY")
     suspend fun getTopRatedMovies(): Response<MovieResponse>
 
+
+
     @GET("movie/now_playing?api_key=$API_KEY")
     suspend fun getAllNowPlayingMovies(
-        @Query("page") position: Int
+        @Query("page") position: Int,
+    ): Response<MovieResponse>
+
+    @GET("movie/popular?api_key=$API_KEY")
+    suspend fun getAllPopularMovies(
+        @Query("page") position: Int,
+    ): Response<MovieResponse>
+
+    @GET("movie/upcoming?api_key=$API_KEY")
+    suspend fun getAllUpcomingMovies(
+        @Query("page") position: Int,
+    ): Response<MovieResponse>
+
+    @GET("movie/top_rated?api_key=$API_KEY")
+    suspend fun getAllTopRatedMovies(
+        @Query("page") position: Int,
     ): Response<MovieResponse>
 
 }
