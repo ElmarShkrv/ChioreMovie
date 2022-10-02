@@ -33,6 +33,9 @@
         tools:layout="@layout/fragment_details">
         <argument android:name="detailId"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_detailsFragment_to_reviewFragment"
+            app:destination="@id/reviewFragment" />
     </fragment>
     <fragment
         android:id="@+id/searchFragment"
@@ -87,5 +90,14 @@
         <action
             android:id="@+id/action_upcomingFragment_to_detailsFragment"
             app:destination="@id/detailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/reviewFragment"
+        android:name="com.chiore.chioremovie.ui.fragments.seeallfragments.review.ReviewFragment"
+        android:label="ReviewFragment"
+        tools:layout="@layout/fragment_review">
+        <argument
+            android:name="movieId"
+            app:argType="integer" />
     </fragment>
 </navigation>

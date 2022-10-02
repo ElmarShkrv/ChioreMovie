@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/corner"
+    android:layout_margin="8dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/reviewsIv"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@color/yellow"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        app:shapeAppearanceOverlay="@style/circleImageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/reviewsNameTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:textColor="@color/white"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="8dp"
+        android:text="@string/test_reviews_name"
+        app:layout_constraintTop_toTopOf="@+id/reviewsIv"
+        app:layout_constraintStart_toEndOf="@+id/reviewsIv"/>
+
+    <TextView
+        android:id="@+id/reviewsDateTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:maxLength="10"
+        android:layout_marginStart="8dp"
+        android:text="@string/test_date_details"
+        app:layout_constraintStart_toEndOf="@+id/reviewsIv"
+        app:layout_constraintTop_toBottomOf="@+id/reviewsNameTv"
+        android:textColor="@color/grey" />
+
+    <TextView
+        android:id="@+id/reviewsTv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/gilroy_light"
+        android:text="@string/test_overview"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:padding="8dp"
+        android:layout_margin="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reviewsIv"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

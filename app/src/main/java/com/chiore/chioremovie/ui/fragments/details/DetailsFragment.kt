@@ -11,6 +11,8 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavArgs
+import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.chiore.chioremovie.R
@@ -63,6 +65,12 @@ class DetailsFragment : Fragment() {
         viewModel.detailReview(args.detailId)
         observeReviewResponse()
 
+        binding.detailsSeeAllReviews.setOnClickListener { view ->
+            val action = DetailsFragmentDirections
+                .actionDetailsFragmentToReviewFragment(args.detailId)
+            Navigation.findNavController(view).navigate(action)
+        }
+
     }
 
     private fun observeReviewResponse() {
@@ -78,7 +86,9 @@ class DetailsFragment : Fragment() {
                         response.data?.let { reviewResponse ->
                             binding.apply {
                                 reviewResponse.results.map { review ->
-                                    Glide.with(root).load(BASE_IMAGE_URL + review.author_details.avatar_path)
+
+                                    Glide.with(root)
+                                        .load(BASE_IMAGE_URL + review.author_details.avatar_path)
                                         .into(reviewsIv)
 
                                     detailsReviewsNameTv.text = review.author
@@ -98,7 +108,8 @@ class DetailsFragment : Fragment() {
                                         }
                                     }
 
-                                    detailsReviewRateTv.text = review.author_details.rating.toString()
+                                    detailsReviewRateTv.text =
+                                        review.author_details.rating.toString()
                                 }
                             }
                         }

@@ -61,4 +61,10 @@ interface MovieApi {
         @Path("movie_id") movieId: Int,
     ): Response<ReviewsResponse>
 
+    @GET("movie/{movie_id}/reviews?api_key=$API_KEY")
+    suspend fun getAllReview(
+        @Path("movie_id") movieId: Int,
+        @Query("page") position: Int,
+    ): Response<ReviewsResponse>
+
 }
