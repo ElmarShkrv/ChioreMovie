@@ -60,6 +60,57 @@ class DetailsFragment : Fragment() {
         observeTrailerVideosResponse()
         setupTrailerRv()
 
+        viewModel.detailReview(args.detailId)
+        observeReviewResponse()
+
+    }
+
+    private fun observeReviewResponse() {
+        lifecycleScope.launch {
+            viewModel.detailsReview.observe(viewLifecycleOwner) { response ->
+                when (response) {
+                    is Resource.Loading -> {
+                        response.message?.let { message ->
+                            Log.e(TAG, "An error occured: $message")
+                        }
+                    }
+                    is Resource.Success -> {
+                        response.data?.let { reviewResponse ->
+                            binding.apply {
+                                reviewResponse.results.map { review ->
+                                    Glide.with(root).load(BASE_IMAGE_URL + review.author_details.avatar_path)
+                                        .into(reviewsIv)
+
+                                    detailsReviewsNameTv.text = review.author
+                                    detailsReviewsDateTv.text = review.updated_at
+
+                                    detailsReviewTv.text = review.content
+
+                                    var isTextViewClicked = false
+
+                                    detailsReviewTv.setOnClickListener {
+                                        if (isTextViewClicked) {
+                                            detailsReviewTv.maxLines = 5
+                                            isTextViewClicked = false
+                                        } else {
+                                            detailsReviewTv.maxLines = review.content.length
+                                            isTextViewClicked = true
+                                        }
+                                    }
+
+                                    detailsReviewRateTv.text = review.author_details.rating.toString()
+                                }
+                            }
+                        }
+                    }
+                    is Resource.Error -> {
+                        response.message?.let { message ->
+                            Log.e(TAG, "An error occured: $message")
+                        }
+                    }
+                }
+            }
+        }
     }
 
     private fun setupTrailerRv() {
@@ -133,7 +184,6 @@ class DetailsFragment : Fragment() {
             detailsNameTv.text = data.original_title
 
             val movieRating = data.vote_average / 2
-
             ratingBar.rating = movieRating.toFloat()
 
             detailsRateTv.text = "Total Vote:  ${data.vote_count}"

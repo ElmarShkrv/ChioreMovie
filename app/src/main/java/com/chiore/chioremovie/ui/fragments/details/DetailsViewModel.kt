@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.chiore.chioremovie.data.model.movies.MovieDetailResponse
 import com.chiore.chioremovie.data.model.movies.Result
+import com.chiore.chioremovie.data.model.movies.ReviewsResponse
 import com.chiore.chioremovie.repository.DetailsRepository
 import com.chiore.chioremovie.util.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -16,6 +17,18 @@ import javax.inject.Inject
 class DetailsViewModel @Inject constructor(
     private val repository: DetailsRepository,
 ) : ViewModel() {
+
+    private val _detailsReview = MutableLiveData<Resource<ReviewsResponse>>(Resource.Loading())
+    val detailsReview: LiveData<Resource<ReviewsResponse>> = _detailsReview
+
+    fun detailReview(movieId: Int) {
+        viewModelScope.launch {
+            val response = repository.getReview(movieId)
+            response.data?.let {
+                _detailsReview.value = Resource.Success(it)
+            }
+        }
+    }
 
     private val _detailsMovie = MutableLiveData<Resource<MovieDetailResponse>>(Resource.Loading())
     val detailsMovie: LiveData<Resource<MovieDetailResponse>> = _detailsMovie
