@@ -1,24 +1,18 @@
 package com.chiore.chioremovie.ui.fragments.details
 
 import android.os.Bundle
-import android.text.TextUtils
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.NavArgs
 import androidx.navigation.Navigation
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.chiore.chioremovie.R
-import com.chiore.chioremovie.adapters.detailsadapters.DetailsGenreRvAdapter
-import com.chiore.chioremovie.adapters.detailsadapters.DetailsTrailerRvAdapter
-import com.chiore.chioremovie.data.model.movies.Genre
+import com.chiore.chioremovie.adapters.detailsadapters.*
 import com.chiore.chioremovie.data.model.movies.MovieDetailResponse
 import com.chiore.chioremovie.databinding.FragmentDetailsBinding
 import com.chiore.chioremovie.util.Constants.Companion.BASE_IMAGE_URL
@@ -26,7 +20,6 @@ import com.chiore.chioremovie.util.DefaultItemDecorator
 import com.chiore.chioremovie.util.Resource
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
-import java.util.*
 
 @AndroidEntryPoint
 class DetailsFragment : Fragment() {
@@ -38,6 +31,9 @@ class DetailsFragment : Fragment() {
 
     private lateinit var detailsGenreRvAdapter: DetailsGenreRvAdapter
     private lateinit var detailsTrailerRvAdapter: DetailsTrailerRvAdapter
+    private lateinit var detailsCastRvAdapter: DetailsCastRvAdapter
+    private lateinit var detailsSimilarRvAdapter: DetailsSimilarRvAdapter
+    private lateinit var detailsRecommendationRvAdapter: DetailsRecommendationRvAdapter
 
     val TAG = "DetailsFragment"
 
@@ -65,12 +61,119 @@ class DetailsFragment : Fragment() {
         viewModel.detailReview(args.detailId)
         observeReviewResponse()
 
+        viewModel.detailCasts(args.detailId)
+        observeCastsResponse()
+        setupCastsRv()
+
+        viewModel.detailSimilarMovie(args.detailId)
+        observeSimilarResponse()
+        setupSimilarRv()
+
+        viewModel.detailsRecommendationMovies(args.detailId)
+        observeRecommendationResponse()
+        setupRecommendationRv()
+
+        binding.detailsBackIv.setOnClickListener {
+            requireActivity().onBackPressed()
+        }
+
         binding.detailsSeeAllReviews.setOnClickListener { view ->
             val action = DetailsFragmentDirections
                 .actionDetailsFragmentToReviewFragment(args.detailId)
             Navigation.findNavController(view).navigate(action)
         }
 
+    }
+
+    private fun setupRecommendationRv() {
+        detailsRecommendationRvAdapter = DetailsRecommendationRvAdapter()
+        binding.recommendationRv.adapter = detailsRecommendationRvAdapter
+    }
+
+    private fun observeRecommendationResponse() {
+        lifecycleScope.launch {
+            viewModel.detailsRecommendation.observe(viewLifecycleOwner) { response ->
+                when (response) {
+                    is Resource.Loading -> {
+                        response.message?.let { message ->
+                            Log.e(TAG, "An error occured: $message")
+                        }
+                    }
+                    is Resource.Success -> {
+                        response.data?.let { detailsRecommendationsResponse ->
+                            detailsRecommendationRvAdapter.submitList(detailsRecommendationsResponse)
+                        }
+                    }
+                    is Resource.Error -> {
+                        response.message?.let { message ->
+                            Log.e(TAG, "An error occured: $message")
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    private fun setupSimilarRv() {
+        detailsSimilarRvAdapter = DetailsSimilarRvAdapter()
+        binding.similarRv.adapter = detailsSimilarRvAdapter
+    }
+
+    private fun observeSimilarResponse() {
+        lifecycleScope.launch {
+            viewModel.detailsSimilar.observe(viewLifecycleOwner) { response ->
+                when (response) {
+                    is Resource.Loading -> {
+                        response.message?.let { message ->
+                            Log.e(TAG, "An error occured: $message")
+                        }
+                    }
+                    is Resource.Success -> {
+                        response.data?.let { detailsSimilarResponse ->
+                            detailsSimilarRvAdapter.submitList(detailsSimilarResponse)
+                        }
+                    }
+                    is Resource.Error -> {
+                        response.message?.let { message ->
+                            Log.e(TAG, "An error occured: $message")
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    private fun setupCastsRv() {
+        detailsCastRvAdapter = DetailsCastRvAdapter()
+        binding.castsRv.adapter = detailsCastRvAdapter
+        binding.castsRv.addItemDecoration(DefaultItemDecorator(
+            resources.getDimensionPixelSize(R.dimen.horizontal_margin_for_horizontal),
+            resources.getDimensionPixelSize(R.dimen.vertical_margin_for_horizontal)
+        ))
+    }
+
+    private fun observeCastsResponse() {
+        lifecycleScope.launch {
+            viewModel.detailsCasts.observe(viewLifecycleOwner) { response ->
+                when (response) {
+                    is Resource.Loading -> {
+                        response.message?.let { message ->
+                            Log.e(TAG, "An error occured: $message")
+                        }
+                    }
+                    is Resource.Success -> {
+                        response.data?.let { detailsCastsResponse ->
+                            detailsCastRvAdapter.submitList(detailsCastsResponse.cast)
+                        }
+                    }
+                    is Resource.Error -> {
+                        response.message?.let { message ->
+                            Log.e(TAG, "An error occured: $message")
+                        }
+                    }
+                }
+            }
+        }
     }
 
     private fun observeReviewResponse() {

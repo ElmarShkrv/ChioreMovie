@@ -4,9 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.chiore.chioremovie.data.model.movies.MovieDetailResponse
-import com.chiore.chioremovie.data.model.movies.Result
-import com.chiore.chioremovie.data.model.movies.ReviewsResponse
+import com.chiore.chioremovie.data.model.movies.*
 import com.chiore.chioremovie.repository.DetailsRepository
 import com.chiore.chioremovie.util.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -17,6 +15,42 @@ import javax.inject.Inject
 class DetailsViewModel @Inject constructor(
     private val repository: DetailsRepository,
 ) : ViewModel() {
+
+    private val _detailsRecommendation = MutableLiveData<Resource<List<ResultDto>>>(Resource.Loading())
+    val detailsRecommendation: LiveData<Resource<List<ResultDto>>> = _detailsRecommendation
+
+    fun detailsRecommendationMovies(movieId: Int) {
+        viewModelScope.launch {
+            val response = repository.getRecommendationMovies(movieId)
+            response.data?.let {
+                _detailsRecommendation.value = Resource.Success(it.results)
+            }
+        }
+    }
+
+    private val _detailsSimilar = MutableLiveData<Resource<List<ResultDto>>>(Resource.Loading())
+    val detailsSimilar: LiveData<Resource<List<ResultDto>>> = _detailsSimilar
+
+    fun detailSimilarMovie(movieId: Int) {
+        viewModelScope.launch {
+            val response = repository.getSimilarMovies(movieId)
+            response.data?.let {
+                _detailsSimilar.value = Resource.Success(it.results)
+            }
+        }
+    }
+
+    private val _detailsCasts = MutableLiveData<Resource<CastsResponse>>(Resource.Loading())
+    val detailsCasts: LiveData<Resource<CastsResponse>> = _detailsCasts
+
+    fun detailCasts(movieId: Int) {
+        viewModelScope.launch {
+            val response = repository.getCasts(movieId)
+            response.data?.let {
+                _detailsCasts.value = Resource.Success(it)
+            }
+        }
+    }
 
     private val _detailsReview = MutableLiveData<Resource<ReviewsResponse>>(Resource.Loading())
     val detailsReview: LiveData<Resource<ReviewsResponse>> = _detailsReview

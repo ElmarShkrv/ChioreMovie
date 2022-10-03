@@ -7,7 +7,7 @@
     android:layout_height="wrap_content">
 
     <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/imageCastAvatar"
+        android:id="@+id/castActorIv"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:src="@color/yellow"
@@ -17,26 +17,26 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textActorName"
+        android:id="@+id/castActorNameTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:textSize="14sp"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/textCharacter"
-        app:layout_constraintStart_toEndOf="@+id/imageCastAvatar"
-        app:layout_constraintTop_toTopOf="@+id/imageCastAvatar"
+        app:layout_constraintBottom_toTopOf="@+id/castCharacterNameTv"
+        app:layout_constraintStart_toEndOf="@+id/castActorIv"
+        app:layout_constraintTop_toTopOf="@+id/castActorIv"
         tools:text="Robert" />
 
     <TextView
-        android:id="@+id/textCharacter"
+        android:id="@+id/castCharacterNameTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="12sp"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/textActorName"
-        app:layout_constraintTop_toBottomOf="@+id/textActorName"
+        app:layout_constraintStart_toStartOf="@+id/castActorNameTv"
+        app:layout_constraintTop_toBottomOf="@+id/castActorNameTv"
         tools:text="Tony Stark" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

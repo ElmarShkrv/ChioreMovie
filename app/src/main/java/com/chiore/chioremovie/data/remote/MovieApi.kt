@@ -1,9 +1,6 @@
 package com.chiore.chioremovie.data.remote
 
-import com.chiore.chioremovie.data.model.movies.MovieDetailResponse
-import com.chiore.chioremovie.data.model.movies.MovieResponse
-import com.chiore.chioremovie.data.model.movies.MovieTrailerResponse
-import com.chiore.chioremovie.data.model.movies.ReviewsResponse
+import com.chiore.chioremovie.data.model.movies.*
 import com.chiore.chioremovie.util.Constants.Companion.API_KEY
 import retrofit2.Response
 import retrofit2.http.GET
@@ -66,5 +63,20 @@ interface MovieApi {
         @Path("movie_id") movieId: Int,
         @Query("page") position: Int,
     ): Response<ReviewsResponse>
+
+    @GET("movie/{movie_id}/credits?api_key=$API_KEY")
+    suspend fun getCasts(
+        @Path("movie_id") movieId: Int,
+    ): Response<CastsResponse>
+
+    @GET("movie/{movie_id}/similar?api_key=$API_KEY")
+    suspend fun getSimilarMovies(
+        @Path("movie_id") movieId: Int,
+    ): Response<MovieResponse>
+
+    @GET("movie/{movie_id}/recommendations?api_key=$API_KEY")
+    suspend fun getRecommendationMovies(
+        @Path("movie_id") movieId: Int,
+    ): Response<MovieResponse>
 
 }

@@ -2,6 +2,7 @@ package com.chiore.chioremovie.adapters.seealladapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
@@ -10,6 +11,8 @@ import com.bumptech.glide.Glide
 import com.chiore.chioremovie.data.model.movies.ResultDto
 import com.chiore.chioremovie.databinding.NowPlayingItemBinding
 import com.chiore.chioremovie.databinding.SeeAllItemBinding
+import com.chiore.chioremovie.ui.fragments.seeallfragments.nowplaying.NowPlayingFragmentDirections
+import com.chiore.chioremovie.ui.fragments.seeallfragments.upcoming.UpcomingFragmentDirections
 import com.chiore.chioremovie.util.Constants.Companion.BASE_IMAGE_URL
 
 class SeeAllUpcomingRvAdapter() :
@@ -26,6 +29,12 @@ class SeeAllUpcomingRvAdapter() :
                 seeAllItemNameTv.text = resultDto.original_title
                 seeAllItemDateTv.text = resultDto.release_date
                 seeAllItemRateTv.text = "${resultDto.vote_average}"
+
+                itemView.setOnClickListener { view ->
+                    val action = UpcomingFragmentDirections
+                        .actionUpcomingFragmentToDetailsFragment(resultDto.id)
+                    Navigation.findNavController(view).navigate(action)
+                }
 
             }
         }
