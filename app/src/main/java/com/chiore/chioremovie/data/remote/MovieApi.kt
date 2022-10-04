@@ -79,4 +79,9 @@ interface MovieApi {
         @Path("movie_id") movieId: Int,
     ): Response<MovieResponse>
 
+    @GET("search/movie?api_key=$API_KEY")
+    suspend fun getSearchMovies(
+        @Query("query") query: String,
+    ): Response<MovieResponse>
+
 }

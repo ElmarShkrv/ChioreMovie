@@ -43,7 +43,7 @@
     </fragment>
     <fragment
         android:id="@+id/searchFragment"
-        android:name="com.chiore.chioremovie.ui.fragments.SearchFragment"
+        android:name="com.chiore.chioremovie.ui.fragments.search.SearchFragment"
         android:label="SearchFragment"
         tools:layout="@layout/fragment_search">
         <action
