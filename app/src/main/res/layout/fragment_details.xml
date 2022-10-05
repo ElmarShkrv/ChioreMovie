@@ -29,53 +29,46 @@
                 android:id="@+id/detailsBackIv"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
+                android:layout_margin="10dp"
                 android:src="@drawable/ic_back"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:layout_margin="10dp" />
+                app:layout_constraintTop_toTopOf="parent" />
 
-            <LinearLayout
-                android:id="@+id/linear1"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
+            <TextView
+                android:id="@+id/detailsNameTv"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_margin="16dp"
+                android:fontFamily="@font/gilroy_extra_blod"
+                android:maxLines="1"
+                android:text="@string/test_movie_name"
+                android:textColor="@color/white"
+                android:textSize="24sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/detailsIv">
+                app:layout_constraintTop_toBottomOf="@+id/detailsIv"
+                app:layout_constraintEnd_toStartOf="@+id/detailsSaveBtn"/>
 
-                <TextView
-                    android:id="@+id/detailsNameTv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="40dp"
-                    android:layout_margin="16dp"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/gilroy_extra_blod"
-                    android:maxLines="1"
-                    android:text="@string/test_movie_name"
-                    android:textColor="@color/white"
-                    android:textSize="24sp" />
-
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_margin="12dp"
-                    android:layout_weight="1"
-                    android:src="@drawable/ic_save" />
-
-            </LinearLayout>
+            <ImageView
+                android:id="@+id/detailsSaveBtn"
+                android:layout_width="40dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/ic_save"
+                app:layout_constraintBottom_toBottomOf="@+id/detailsNameTv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/detailsNameTv" />
 
             <RatingBar
                 android:id="@+id/ratingBar"
                 style="?android:attr/ratingBarStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
                 android:numStars="5"
                 android:progressTint="@color/yellow"
                 android:rating="1"
                 android:stepSize="1"
-                app:layout_constraintStart_toStartOf="@+id/linear1"
-                app:layout_constraintTop_toBottomOf="@+id/linear1" />
+                app:layout_constraintStart_toStartOf="@+id/detailsNameTv"
+                app:layout_constraintTop_toBottomOf="@+id/detailsNameTv" />
 
             <TextView
                 android:id="@+id/detailsRateTv"
@@ -93,23 +86,23 @@
                 android:layout_width="0dp"
                 android:layout_height="30dp"
                 android:layout_marginTop="8dp"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 android:orientation="horizontal"
-                tools:listitem="@layout/genre_item"
-                tools:itemCount="4"
-                app:layout_constraintStart_toStartOf="@+id/ratingBar"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
+                app:layout_constraintStart_toStartOf="@+id/ratingBar"
+                app:layout_constraintTop_toBottomOf="@+id/ratingBar"
+                tools:itemCount="4"
+                tools:listitem="@layout/genre_item" />
 
             <TextView
                 android:id="@+id/detailsDateTv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/test_date_details"
-                android:textColor="@color/grey"
+                android:layout_marginTop="8dp"
                 android:fontFamily="@font/gilroy_light"
                 android:maxLines="1"
-                android:layout_marginTop="8dp"
+                android:text="@string/test_date_details"
+                android:textColor="@color/grey"
                 app:layout_constraintStart_toStartOf="@+id/detailsGemreRv"
                 app:layout_constraintTop_toBottomOf="@+id/detailsGemreRv" />
 
@@ -117,8 +110,8 @@
                 android:id="@+id/testTimeIv"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/ic_budget"
                 android:layout_marginTop="8dp"
+                android:src="@drawable/ic_budget"
                 app:layout_constraintStart_toStartOf="@+id/detailsDateTv"
                 app:layout_constraintTop_toBottomOf="@+id/detailsDateTv" />
 
@@ -126,77 +119,77 @@
                 android:id="@+id/detailsBudgetTv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/test_budget"
-                android:textColor="@color/colorBdget"
+                android:layout_marginStart="8dp"
                 android:fontFamily="@font/gilroy_light"
                 android:maxLines="1"
-                android:layout_marginStart="8dp"
+                android:text="@string/test_budget"
+                android:textColor="@color/colorBdget"
+                app:layout_constraintBottom_toBottomOf="@+id/testTimeIv"
                 app:layout_constraintStart_toEndOf="@+id/testTimeIv"
-                app:layout_constraintTop_toTopOf="@+id/testTimeIv"
-                app:layout_constraintBottom_toBottomOf="@+id/testTimeIv"/>
+                app:layout_constraintTop_toTopOf="@+id/testTimeIv" />
 
             <TextView
                 android:id="@+id/detailsHeaderOverviewTv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/gilroy_extra_blod"
                 android:layout_marginTop="16dp"
+                android:fontFamily="@font/gilroy_extra_blod"
                 android:text="Overview"
                 android:textColor="@color/white"
                 android:textSize="24sp"
                 app:layout_constraintStart_toStartOf="@+id/testTimeIv"
-                app:layout_constraintTop_toBottomOf="@+id/testTimeIv"/>
+                app:layout_constraintTop_toBottomOf="@+id/testTimeIv" />
 
             <TextView
                 android:id="@+id/detailsOverviewTv"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
                 android:fontFamily="@font/gilroy_light"
+                android:padding="8dp"
                 android:text="@string/test_overview"
                 android:textColor="@color/white"
                 android:textSize="16sp"
-                android:padding="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/detailsHeaderOverviewTv"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                app:layout_constraintTop_toBottomOf="@+id/detailsHeaderOverviewTv" />
 
             <TextView
                 android:id="@+id/detailsHeaderTrailersTv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/gilroy_extra_blod"
                 android:layout_marginTop="16dp"
+                android:fontFamily="@font/gilroy_extra_blod"
                 android:text="Trailers"
                 android:textColor="@color/white"
                 android:textSize="24sp"
                 app:layout_constraintStart_toStartOf="@+id/detailsHeaderOverviewTv"
-                app:layout_constraintTop_toBottomOf="@+id/detailsOverviewTv"/>
+                app:layout_constraintTop_toBottomOf="@+id/detailsOverviewTv" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/trailerRv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                tools:listitem="@layout/trailer_item"
                 android:orientation="horizontal"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/detailsHeaderTrailersTv" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/detailsHeaderTrailersTv"
+                tools:listitem="@layout/trailer_item" />
 
             <TextView
                 android:id="@+id/detailsHeaderReviewsTv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/gilroy_extra_blod"
                 android:layout_marginTop="16dp"
+                android:fontFamily="@font/gilroy_extra_blod"
                 android:text="Reviews"
                 android:textColor="@color/white"
                 android:textSize="24sp"
                 app:layout_constraintStart_toStartOf="@+id/detailsHeaderTrailersTv"
-                app:layout_constraintTop_toBottomOf="@+id/trailerRv"/>
+                app:layout_constraintTop_toBottomOf="@+id/trailerRv" />
 
             <TextView
                 android:id="@+id/detailsSeeAllReviews"
@@ -216,56 +209,56 @@
                 android:id="@+id/reviewsIv"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:src="@color/yellow"
                 android:layout_marginTop="8dp"
-                app:layout_constraintTop_toBottomOf="@+id/detailsHeaderReviewsTv"
+                android:src="@color/yellow"
                 app:layout_constraintStart_toStartOf="@+id/detailsHeaderReviewsTv"
-                app:shapeAppearanceOverlay="@style/circleImageView"/>
+                app:layout_constraintTop_toBottomOf="@+id/detailsHeaderReviewsTv"
+                app:shapeAppearanceOverlay="@style/circleImageView" />
 
             <TextView
                 android:id="@+id/detailsReviewsNameTv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:maxLines="1"
-                android:layout_marginTop="4dp"
                 android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                android:maxLines="1"
                 android:text="@string/test_reviews_name"
+                android:textColor="@color/white"
                 app:layout_constraintStart_toEndOf="@+id/reviewsIv"
-                app:layout_constraintTop_toTopOf="@+id/reviewsIv"
-                android:textColor="@color/white" />
+                app:layout_constraintTop_toTopOf="@+id/reviewsIv" />
 
             <TextView
                 android:id="@+id/detailsReviewsDateTv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:maxLines="1"
-                android:maxLength="10"
                 android:layout_marginStart="8dp"
+                android:maxLength="10"
+                android:maxLines="1"
                 android:text="@string/test_date_details"
+                android:textColor="@color/grey"
                 app:layout_constraintStart_toEndOf="@+id/reviewsIv"
-                app:layout_constraintTop_toBottomOf="@+id/detailsReviewsNameTv"
-                android:textColor="@color/grey" />
+                app:layout_constraintTop_toBottomOf="@+id/detailsReviewsNameTv" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/detailsReviewRateCard"
                 android:layout_width="80dp"
                 android:layout_height="0dp"
-                app:cardCornerRadius="50dp"
                 android:backgroundTint="@color/ratingBackground"
-                app:layout_constraintTop_toTopOf="@+id/detailsReviewsNameTv"
+                app:cardCornerRadius="50dp"
                 app:layout_constraintBottom_toBottomOf="@+id/detailsReviewsDateTv"
-                app:layout_constraintEnd_toEndOf="@+id/detailsSeeAllReviews" >
+                app:layout_constraintEnd_toEndOf="@+id/detailsSeeAllReviews"
+                app:layout_constraintTop_toTopOf="@+id/detailsReviewsNameTv">
 
                 <TextView
                     android:id="@+id/detailsReviewRateTv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:maxLines="1"
+                    android:layout_gravity="center"
                     android:drawableStart="@drawable/ic_big_rate"
                     android:drawablePadding="8dp"
-                    android:layout_gravity="center"
-                    android:text="@string/test_reviews_rating"
                     android:fontFamily="@font/gilroy_extra_blod"
+                    android:maxLines="1"
+                    android:text="@string/test_reviews_rating"
                     android:textColor="@color/white"
                     android:textSize="16sp" />
 
@@ -275,90 +268,90 @@
                 android:id="@+id/detailsReviewTv"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_margin="8dp"
                 android:fontFamily="@font/gilroy_light"
+                android:maxLines="5"
+                android:padding="8dp"
                 android:text="@string/test_overview"
                 android:textColor="@color/white"
                 android:textSize="16sp"
-                android:maxLines="5"
-                android:padding="8dp"
-                android:layout_margin="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/detailsReviewsDateTv"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                app:layout_constraintTop_toBottomOf="@+id/detailsReviewsDateTv" />
 
             <TextView
                 android:id="@+id/detailsHeaderCastsTv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/gilroy_extra_blod"
                 android:layout_marginTop="16dp"
+                android:fontFamily="@font/gilroy_extra_blod"
                 android:text="Casts"
                 android:textColor="@color/white"
                 android:textSize="24sp"
                 app:layout_constraintStart_toStartOf="@+id/detailsHeaderReviewsTv"
-                app:layout_constraintTop_toBottomOf="@+id/detailsReviewTv"/>
+                app:layout_constraintTop_toBottomOf="@+id/detailsReviewTv" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/castsRv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                tools:listitem="@layout/casts_item"
                 android:orientation="horizontal"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/detailsHeaderCastsTv" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/detailsHeaderCastsTv"
+                tools:listitem="@layout/casts_item" />
 
             <TextView
                 android:id="@+id/detailsHeaderSimilarTv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/gilroy_extra_blod"
                 android:layout_marginTop="16dp"
+                android:fontFamily="@font/gilroy_extra_blod"
                 android:text="Similar"
                 android:textColor="@color/white"
                 android:textSize="24sp"
                 app:layout_constraintStart_toStartOf="@+id/detailsHeaderCastsTv"
-                app:layout_constraintTop_toBottomOf="@+id/castsRv"/>
+                app:layout_constraintTop_toBottomOf="@+id/castsRv" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/similarRv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                tools:listitem="@layout/home_horizontal_item"
                 android:orientation="horizontal"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/detailsHeaderSimilarTv"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                tools:listitem="@layout/home_horizontal_item" />
 
             <TextView
                 android:id="@+id/detailsHeaderRecommendationTv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/gilroy_extra_blod"
                 android:layout_marginTop="16dp"
+                android:fontFamily="@font/gilroy_extra_blod"
                 android:text="Recommendation"
                 android:textColor="@color/white"
                 android:textSize="24sp"
                 app:layout_constraintStart_toStartOf="@+id/detailsHeaderCastsTv"
-                app:layout_constraintTop_toBottomOf="@+id/similarRv"/>
+                app:layout_constraintTop_toBottomOf="@+id/similarRv" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recommendationRv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                tools:listitem="@layout/home_horizontal_item"
+                android:layout_marginBottom="16dp"
                 android:orientation="horizontal"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/detailsHeaderRecommendationTv"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                android:layout_marginBottom="16dp"/>
+                tools:listitem="@layout/home_horizontal_item" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>

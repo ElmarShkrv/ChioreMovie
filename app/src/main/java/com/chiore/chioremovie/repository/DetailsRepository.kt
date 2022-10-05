@@ -1,5 +1,6 @@
 package com.chiore.chioremovie.repository
 
+import com.chiore.chioremovie.data.local.MovieDao
 import com.chiore.chioremovie.data.model.movies.*
 import com.chiore.chioremovie.data.remote.MovieApi
 import com.chiore.chioremovie.util.Resource
@@ -7,7 +8,10 @@ import javax.inject.Inject
 
 class DetailsRepository @Inject constructor(
     private val movieApi: MovieApi,
+    private val movieDao: MovieDao,
 ) {
+
+    suspend fun upsert(movieDetailResponse: MovieDetailResponse) = movieDao.upsert(movieDetailResponse)
 
     suspend fun getRecommendationMovies(movieId: Int): Resource<MovieResponse> {
         return try {

@@ -43,6 +43,7 @@ class SearchFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.searchRv.visibility = View.GONE
 
         observeSearchResponse()
         setupSearchRv()
@@ -65,6 +66,8 @@ class SearchFragment : Fragment() {
                             if (query != null) {
                                 binding.searchRv.scrollToPosition(0)
                                 viewModel.searchMovie(query)
+                                binding.searchRv.visibility = View.VISIBLE
+                                binding.searchLtAnimation.visibility = View.GONE
                                 searchView.clearFocus()
                             }
                             return true

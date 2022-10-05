@@ -16,6 +16,10 @@ class DetailsViewModel @Inject constructor(
     private val repository: DetailsRepository,
 ) : ViewModel() {
 
+    fun saveMovie(movieDetailResponse: MovieDetailResponse) = viewModelScope.launch {
+        repository.upsert(movieDetailResponse)
+    }
+
     private val _detailsRecommendation = MutableLiveData<Resource<List<ResultDto>>>(Resource.Loading())
     val detailsRecommendation: LiveData<Resource<List<ResultDto>>> = _detailsRecommendation
 

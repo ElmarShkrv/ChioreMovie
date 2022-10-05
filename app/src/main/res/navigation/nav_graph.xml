@@ -52,7 +52,7 @@
     </fragment>
     <fragment
         android:id="@+id/favoriteFragment"
-        android:name="com.chiore.chioremovie.ui.fragments.FavoriteFragment"
+        android:name="com.chiore.chioremovie.ui.fragments.favorite.FavoriteFragment"
         android:label="FavoriteFragment"
         tools:layout="@layout/fragment_favorite">
         <action

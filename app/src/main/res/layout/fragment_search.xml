@@ -11,13 +11,23 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/background"
-        app:navigationIcon="@drawable/ic_back"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:title="Search"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
     </androidx.appcompat.widget.Toolbar>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/searchLtAnimation"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        app:lottie_rawRes="@raw/search_movie"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/searchRv"

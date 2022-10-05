@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -278,6 +279,16 @@ class DetailsFragment : Fragment() {
                         response.data?.let { detailsResponse ->
                             setupUi(detailsResponse)
                             detailsGenreRvAdapter.submitList(detailsResponse.genres)
+
+                            binding.detailsSaveBtn.setOnClickListener {
+                                viewModel.saveMovie(detailsResponse)
+                                Toast.makeText(
+                                    requireContext(),
+                                    "Movie is saved",
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                            }
+
                         }
                     }
                     is Resource.Error -> {
