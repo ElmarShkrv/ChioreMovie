@@ -2,56 +2,47 @@
 Movies is a simple project to study and play with some android components, architecture and tools for Android development.
 
 ## Project Features 🛠️
-* 100% Kotlin
 * MVVM architecture
-* Architecture Components (Lifecycle, LiveData, ViewModel, Room Persistence)
-* The Movie DB API
-* Dependency injection
-* [Retrofit2 & Gson](https://github.com/square/retrofit) for constructing the REST API
-* [Glide](https://github.com/bumptech/glide) for loading images
-* [Paging3](https://developer.android.com/topic/libraries/architecture/paging/v3-overview) for pagination
-* [Navigation component](https://developer.android.com/guide/navigation) for navigation
+* [Dependency injection with Hilt](https://developer.android.com/training/dependency-injection/hilt-android)
+* [Retrofit2 & Gson](https://github.com/square/retrofit)
+* [Glide](https://github.com/bumptech/glide)
+* [Paging3](https://developer.android.com/topic/libraries/architecture/paging/v3-overview)
+* [Navigation component](https://developer.android.com/guide/navigation)
+* [Room](https://developer.android.com/training/data-storage/room)
+* [LiveData](https://developer.android.com/topic/libraries/architecture/livedata)]
+* [The Movie DB API](https://developers.themoviedb.org/3/getting-started/introduction)
 
 ## Screenshots 📷
-| Splash |
+
+| Home | Home |
+| ---- | ---- |
+|<img src="https://user-images.githubusercontent.com/105628110/194260019-31f353d4-56cb-4e47-a195-bf4fc4974726.png" width="250" height="500"/>|<img src="https://user-images.githubusercontent.com/105628110/194260155-96ae0b9d-87a0-4f3b-bcd4-c8e9911b92c6.png" width="250" height="500"/>
+
+</br>
+
+| See All |
+| ------- |
+|<img src="https://user-images.githubusercontent.com/105628110/194260453-b78657a5-e1bc-4224-bf6b-f14763ab9aaf.png" width="250" height="500"/>|
+
+</br>
+
+| Movie Detail | Movie Detail | Movie Detail |
+| ------------ | ------------ | ------------ |
+|<img src="https://user-images.githubusercontent.com/105628110/194260905-4d16899e-7d0e-40a7-885d-c2d5b1178c12.png" width="250" height="500"/>|<img src="https://user-images.githubusercontent.com/105628110/194261045-ffc4e4e2-2e48-4e6c-ba11-6ef86b756079.png" width="250" height="500"/>|<img src="https://user-images.githubusercontent.com/105628110/194261439-23754299-ea3f-44b1-97ea-9847e8f8ce4f.png" width="250" height="500"/>
+
+</br>
+
+| Search |
 | ------ |
-|<img src="https://user-images.githubusercontent.com/105628110/191680050-a1cafc4a-5477-4128-915b-019736123da9.jpg" width="250" height="500"/>|
+|<img src="https://user-images.githubusercontent.com/105628110/194261916-09b27ebd-0192-4199-b5d3-f86846ffc252.png" width="250" height="500"/>|
 
 </br>
 
-| Agent | Agent |
-| ----- | ----- |
-|<img src="https://user-images.githubusercontent.com/105628110/191681375-a1cee54e-f405-4dee-b04f-c76f61d31461.jpg" width="250" height="500"/>|<img src="https://user-images.githubusercontent.com/105628110/191681383-f8442fa4-110e-4ee8-b294-69da37a4e6c5.jpg" width="250" height="500"/>
-
-</br>
-
-| Agent Detail | Agent Detail |
-| ------------ | ------------ |
-|<img src="https://user-images.githubusercontent.com/105628110/191680802-ef0eea24-b09d-4f38-a6c4-b82fcc057138.jpg" width="250" height="500"/>|<img src="https://user-images.githubusercontent.com/105628110/191680814-d0b8c989-b6e9-47ba-9d96-e51189951dc8.jpg" width="250" height="500"/>
-
-</br>
-
-| Map | Map Detail |
-| --- |----------- |
-|<img src="https://user-images.githubusercontent.com/105628110/191682601-9396f35e-da09-4b34-a07d-f16e34551736.jpg" width="250" height="500"/>|<img src="https://user-images.githubusercontent.com/105628110/191682803-e51a87ff-5d0c-4c1c-8e23-41403b882ce9.jpg" width="250" height="500"/>|
-
-</br>
-
-| Weapon | Weapon Detail | Weapon Detail |
-| ------ |-------------- |-------------- |
-|<img src="https://user-images.githubusercontent.com/105628110/191683486-257ec140-6e75-4651-86ef-5bf37da777f7.jpg" width="250" height="500"/>|<img src="https://user-images.githubusercontent.com/105628110/191683503-ec24d41b-a477-499e-b3fe-b99c189676fb.jpg" width="250" height="500"/>|<img src="https://user-images.githubusercontent.com/105628110/191683508-950f5e74-1693-4072-a7ad-99f0fdd1a85d.jpg" width="250" height="500"/>|
-
-</br>
-
-| Tier |
+| Save |
 | ---- |
-|<img src="https://user-images.githubusercontent.com/105628110/191684018-a5919536-96ef-4824-9541-6d90be7707e6.jpg" width="250" height="500"/>|
-
-
+|<img src="https://user-images.githubusercontent.com/105628110/194262290-48e17e0c-9102-45e7-8c83-feb0eb47d6de.png" width="250" height="500"/>|
 
 </br>
-
-
 
 UI idea from [cnrture](https://github.com/cnrture/Valorant-Compose-App)
 
