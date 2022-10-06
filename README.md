@@ -44,5 +44,5 @@ Movies is a simple project to study and play with some android components, archi
 
 </br>
 
-UI idea from [cnrture](https://github.com/cnrture/Valorant-Compose-App)
+UI idea from [enginebai](https://github.com/enginebai/MovieHunt)
 
