@@ -1,7 +1,8 @@
 package com.chiore.chioremovie.data.remote
 
+import com.chiore.chioremovie.BuildConfig
+import com.chiore.chioremovie.BuildConfig.API_KEY
 import com.chiore.chioremovie.data.model.movies.*
-import com.chiore.chioremovie.util.Constants.Companion.API_KEY
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
