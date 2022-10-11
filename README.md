@@ -1,16 +1,19 @@
 # # Movie-App
 Movies is a simple project to study and play with some android components, architecture and tools for Android development.
 
-## Project Features 🛠️
+## Tech Stacks 🛠️
 * MVVM architecture
-* [Dependency injection with Hilt](https://developer.android.com/training/dependency-injection/hilt-android)
 * [Retrofit2 & Gson](https://github.com/square/retrofit)
+* [Dependency injection with Hilt](https://developer.android.com/training/dependency-injection/hilt-android)
+* [Android Architecture Components](https://developer.android.com/topic/libraries/architecture)
+  * [Room](https://developer.android.com/training/data-storage/room)
+  * [Paging3](https://developer.android.com/topic/libraries/architecture/paging/v3-overview)
+  * [ViewModel](https://developer.android.com/reference/androidx/lifecycle/ViewModel)
+  * [LiveData](https://developer.android.com/topic/libraries/architecture/livedata)
+  * [Navigation component](https://developer.android.com/guide/navigation)
 * [Glide](https://github.com/bumptech/glide)
-* [Paging3](https://developer.android.com/topic/libraries/architecture/paging/v3-overview)
-* [Navigation component](https://developer.android.com/guide/navigation)
-* [Room](https://developer.android.com/training/data-storage/room)
-* [LiveData](https://developer.android.com/topic/libraries/architecture/livedata)
-* [The Movie DB API](https://developers.themoviedb.org/3/getting-started/introduction)
+* [Coroutine](https://developer.android.com/kotlin/coroutines)
+* (Upcoming) [Flow](https://developer.android.com/kotlin/flow)
 
 ## Screenshots 📷
 
