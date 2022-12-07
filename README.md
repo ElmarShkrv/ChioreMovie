@@ -13,7 +13,6 @@ Movies is a simple project to study and play with some android components, archi
   * [Navigation component](https://developer.android.com/guide/navigation)
 * [Glide](https://github.com/bumptech/glide)
 * [Coroutine](https://developer.android.com/kotlin/coroutines)
-* (Upcoming) [Flow](https://developer.android.com/kotlin/flow)
 
 ## Screenshots 📷
 
